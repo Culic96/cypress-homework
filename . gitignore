@@ -1,2 +1,4 @@
 /cypress/e2e/2-advanced-examples
 /node_modules
+/.pnp
+.pnp.js
