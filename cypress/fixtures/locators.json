@@ -1,0 +1,12 @@
+{
+    "registerForm": {
+        "firstName": "#first-name",
+        "lastName": "#last-name",
+        "email": "[type='email']",
+        "password": "#password",
+        "passwordConfirmation": "#password-confirmation",
+        "checkBox": "[type='checkbox']",
+        "submitBtn": "[type='submit']",
+        "writePassword": "register123"
+    }
+}
