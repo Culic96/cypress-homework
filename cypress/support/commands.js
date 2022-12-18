@@ -24,6 +24,20 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+let LOCAL_STORAGE_MEMORY = {};
+
 Cypress.Commands.add("WriteEmail", (email) => {
     cy.get("[type='email']").type(Math.random() + email)
 })
+
+Cypress.Commands.add("saveLocalStorage", () => {
+    Object.keys(localStorage).forEach(key => {
+      LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+    });
+  });
+
+  Cypress.Commands.add("restoreLocalStorage", () => {
+    Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
+      localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+    });
+  });
