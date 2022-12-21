@@ -36,6 +36,15 @@ class CreateGallery{
         return cy.contains("Cancel")
     }
 
+    createGallery(title, desc){
+        this.titleInput.type(title)
+        this.descInput.type(desc)
+        this.addImageInput.type("https://www.cypress.io/static/8fb8a1db3cdc0b289fad927694ecb415/cypress-io-logo-social-share.png")
+        this.addImageBtn.click()
+        this.removeImageIcon.eq(1).click()
+        this.submitBtn.click()
+    }
+
 }
 
 export const createGalleryPage = new CreateGallery()

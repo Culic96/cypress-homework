@@ -16,6 +16,10 @@ class HomePage{
         return cy.get("[href='/create']")
     }
 
+    get logoutBtn(){
+        return cy.contains("Logout")
+    }
+
     homePageBtnClick(){
         this.homePageBtn.click()
     }
@@ -30,6 +34,10 @@ class HomePage{
 
     createGalleryBtnClick(){
         this.createGalleryBtn.click()
+    }
+
+    logoutBtnClick(){
+        this.logoutBtn.click()
     }
 
 }

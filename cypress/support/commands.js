@@ -41,3 +41,21 @@ Cypress.Commands.add("saveLocalStorage", () => {
       localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
     });
   });
+
+Cypress.Commands.add("Login", (email, password) => {
+  cy.request({
+    method: "POST",
+    url: "https://gallery-api.vivifyideas.com/api/auth/login",
+    body: {
+        email,
+        password
+      }
+
+    }).its("body").then((response) => {
+      window.localStorage.setItem("token", response.access_token)
+      window.localStorage.setItem("user_id", response.user_id)
+    })
+  })
+
+
+ 
